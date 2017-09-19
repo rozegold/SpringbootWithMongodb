@@ -15,6 +15,12 @@ public class Booking {
    private String destination;
    private Date travelDate;
 
+    public Booking(String name, String departure, String destination, Date travelDate) {
+        this.name = name;
+        this.departure = departure;
+        this.destination = destination;
+        this.travelDate = travelDate;
+    }
 
     public long getId() {
         return id;
