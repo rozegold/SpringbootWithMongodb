@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -42,5 +43,10 @@ public class BookingController {
     }
 
 
+    @RequestMapping(path = "/bookings", method = RequestMethod.GET)
+    public @ResponseBody List<Booking> readAll() {
+
+        return service.bookings();
+    }
 
 }

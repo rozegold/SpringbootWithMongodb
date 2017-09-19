@@ -16,8 +16,6 @@ public interface BookRepository extends MongoRepository<Booking, Long>{
     @Query
     Booking findByDeparture(String departure);
 
-    @Query
-    Booking findById(long id);
 
 
 }

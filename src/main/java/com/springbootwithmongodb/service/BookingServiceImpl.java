@@ -4,6 +4,8 @@ import com.springbootwithmongodb.models.Booking;
 import com.springbootwithmongodb.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 public class BookingServiceImpl implements BookingService {
 
 
@@ -22,6 +24,11 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public Booking booking(Long id) {
-        return repository.f;
+        return repository.findOne(id);
+    }
+
+    @Override
+    public List<Booking> bookings() {
+        return repository.findAll();
     }
 }
