@@ -8,12 +8,15 @@ import java.util.Date;
 @Document
 public class Booking {
 
-@Id
+    @Id
     private long id;
-   private String name;
-   private String departure;
-   private String destination;
-   private Date travelDate;
+    private String name;
+    private String departure;
+    private String destination;
+    private Date travelDate;
+
+    public Booking() {
+    }
 
     public Booking(String name, String departure, String destination, Date travelDate) {
         this.name = name;
@@ -60,5 +63,16 @@ public class Booking {
 
     public void setTravelDate(Date travelDate) {
         this.travelDate = travelDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", departure='" + departure + '\'' +
+                ", destination='" + destination + '\'' +
+                ", travelDate=" + travelDate +
+                '}';
     }
 }

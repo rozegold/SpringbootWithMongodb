@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/booking")
 public class BookingController {
 
     private BookingService service;
@@ -22,7 +21,7 @@ public class BookingController {
 
 
     @RequestMapping(path = "/booking", method = RequestMethod.POST)
-    public @ResponseBody Booking book(Booking booking) {
+    public @ResponseBody Booking book(@RequestBody Booking booking) {
 
         if(null == booking)
             throw new IllegalArgumentException("Booking data is null");
@@ -33,7 +32,7 @@ public class BookingController {
 
 
     @RequestMapping(path = "/booking", method = RequestMethod.GET)
-    public @ResponseBody Booking read(@PathVariable Long id) {
+    public @ResponseBody Booking read(@RequestParam(name = "id") Long id) {
 
         if (null == id){
             throw new IllegalArgumentException("Booking ID is null");

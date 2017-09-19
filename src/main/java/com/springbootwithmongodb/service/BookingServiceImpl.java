@@ -3,9 +3,11 @@ package com.springbootwithmongodb.service;
 import com.springbootwithmongodb.models.Booking;
 import com.springbootwithmongodb.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class BookingServiceImpl implements BookingService {
 
 
